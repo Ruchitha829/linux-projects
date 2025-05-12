@@ -33,13 +33,4 @@ if [ "$DISK_USAGE" -gt "$DISK_THRESHOLD" ]; then
     log_alert "High Disk usage: ${DISK_USAGE}%"
 fi
 
-# Network (optional)
-if command -v ifstat &> /dev/null; then
-    NET_USAGE=$(ifstat -i eth0 0.1 1 | awk 'NR==3 {print $1}' | cut -d. -f1)
-    if [ "$NET_USAGE" -gt "$NET_THRESHOLD" ]; then
-        log_alert "High Network usage: ${NET_USAGE} KB/s (eth0)"
-    fi
-else
-    log_alert "ifstat not installed: Skipping network check"
-fi
 
