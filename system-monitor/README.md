@@ -4,7 +4,7 @@ A bash script that monitors system health: CPU, memory, disk, and network usage,
 
 ## 🔧 Features
 - CPU, RAM, Disk usage monitoring
-- Optional Network usage check
+
 - Alerts logged with timestamps
 - Easy threshold config
 - Cron-friendly
